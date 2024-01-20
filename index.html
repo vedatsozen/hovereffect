@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOVER EFFECT by Vedat Sözen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body>
+    
+<div id="photocontainer">
+    <img id="img" src="images/resim1.jpg">
+    <div id="bg"></div>
+    <p id="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</div>
+<audio id="ses" src="ses.mp3"></audio>
+
+<script>
+
+let photocontainer = document.getElementById("photocontainer");
+let bg = document.getElementById("bg");
+let text = document.getElementById("text");
+let ses = document.getElementById("ses");
+
+photocontainer.addEventListener("mouseover", function() {
+    ses.play();
+    text.classList.add("goup");
+    bg.classList.add("darkimg");
+    
+});
+
+photocontainer.addEventListener("mouseleave", function() {
+    text.classList.remove("goup");
+    bg.classList.remove("darkimg");
+    ses.pause();
+    ses.currentTime = 0; // Sesin başa dönmesi için
+});
+
+</script>
+</body>
+</html>
